@@ -1,0 +1,53 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2e04d15ad26f7fb3ef8ed842f6a5ecfb76068211acf935978f4de14ef147af0b
+
+name:           tiny-servant
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Disco-Dave/tiny-servant#readme>
+homepage:       https://github.com/Disco-Dave/tiny-servant#readme
+bug-reports:    https://github.com/Disco-Dave/tiny-servant/issues
+author:         David Burkett
+maintainer:     db.discodave@gmail.com
+copyright:      GPLv2
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Disco-Dave/tiny-servant
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_tiny_servant
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds PolyKinds TypeOperators TypeFamilies FlexibleInstances ScopedTypeVariables InstanceSigs
+  build-depends:
+      base >=4.7 && <5
+    , time
+  default-language: Haskell2010
+
+executable tiny-servant-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_tiny_servant
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds PolyKinds TypeOperators TypeFamilies FlexibleInstances ScopedTypeVariables InstanceSigs
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , time
+    , tiny-servant
+  default-language: Haskell2010

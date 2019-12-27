@@ -1,0 +1,47 @@
+name:                tiny-servant
+version:             0.1.0.0
+github:              "Disco-Dave/tiny-servant"
+license:             BSD3
+author:              "David Burkett"
+maintainer:          "db.discodave@gmail.com"
+copyright:           "GPLv2"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/Disco-Dave/tiny-servant#readme>
+
+default-extensions:
+- DataKinds 
+- PolyKinds 
+- TypeOperators
+- TypeFamilies
+- FlexibleInstances
+- ScopedTypeVariables
+- InstanceSigs
+
+dependencies:
+- base >= 4.7 && < 5
+- time
+
+library:
+  source-dirs: src
+
+executables:
+  tiny-servant-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tiny-servant
